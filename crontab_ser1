@@ -1,0 +1,17 @@
+
+#crontab -l的内容实际都在  /var/spool/cron/ 目录下的文件里面
+
+# chenyang dx
+0 */4 * * * /data/crawler_system/projects/dx/bin/dx_new_crawl.sh >> /dev/null
+0 */3 * * * /data/crawler_system/projects/dx/bin/dx_crawl_dynamic.sh >> /dev/null
+0 */5 * * * /data/crawler_system/projects/dx/bin/dx_popular_crawl.sh >> /dev/null
+
+# amazon_di
+0 */1 * * * /data/crawler_system/projects/di/amazon_track_unique/bin/amazon_track_list.sh >> /dev/null
+0 */1 * * * /data/crawler_system/projects/di/amazon_track_unique/bin/amazon_track_detail.sh >> /dev/null
+0 */1 * * * /data/crawler_system/projects/di/amazon_track_unique/bin/handle_repeat_asin.sh >> /dev/null
+#*/1 * * * * /data/crawler_system/projects/di/amazon_track/bin/data_insert.sh >> /dev/null
+0 18 * * * /data/crawler_system/projects/di/amazon_track/bin/update_track_time.sh >> /dev/null
+0 */1 * * * /data/crawler_system/projects/di/amazon_asin_unique/bin/amazon_asin.sh >> /dev/null
+0 */1 * * * /data/crawler_system/projects/di/amazon_temp/bin/amazon_temp.sh >> /dev/null
+
